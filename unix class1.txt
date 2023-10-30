@@ -1,0 +1,170 @@
+unix - memory mang , io system mang, sec mag , sec storage mang, multi use mang , file mange , process mang.
+--------------------------------
+
+portability
+
+CLI enviorment - -d = display only brief description of the specified command.
+                 -m = organize the available information just as the man comand does.
+                 -s = display the command syntax of the specified command.
+--------------------------------
+
+file mang - 
+
+   ordinary files  - an ordinary file is a file on the systerm that contains data , text , or program instructions.
+   directories  - it strore both special and ordinary files. for users familiar with windows or mac os , 
+                  unix directories are equivlaent to forlders .
+   special files - some special files provide acess to hardwre such as hard drives, cd rom drives , modems , 
+                   and ethernet adapters . other special files are similar to aliases or shorcuts and enable
+                   you to access a single file using diff names.
+
+ls -a(all files) , 
+ls -l(all files with permissions) , 
+ls -i(files with numbering) , 
+ls -r(reverse order) , 
+ls -t(sorted order accoding last modification)
+-----------------------------------------
+
+pwd -- print working dir
+mkdir mydirectory create new dir
+cd mydirectory
+rmdir mydirectory
+------------------------------------
+
+file system - tree / , every file has unique name which is inode
+/bin - executeables files are located
+/dev - are device drivers
+/etc - configuration files , disk coniguration files , groups , ethernet
+/lib - shared library files.
+/boot - files for booting system
+/home - contains home directory for users
+/tmp - hold temporary files used between system boots
+/usr - user details
+/kernel - kernel related files
+/sbin - binary executable files
+
+-------------------------------------
+
+echo -e " hello  \n world"
+echo -e 'hello \t world' tabspace
+echo -e 'hello \v world' vertical space
+echo *.txt
+mv source destination
+mv oldname newname(for change name)
+rm text1.txt (remove that file from dir)
+pwd -L (current working dir with logical path with some symblical link)
+-v (check version)
+
+-------------------------------------
+
+VI editor-
+
+vi filename
+it is case sensitive
+
+k -- up one line 
+j -- one line down 
+h -- one character left  
+l -- one character right  
+0 -- cursor befinning line
+o -- cursor for new line
+$ -- cursor end of line
+( -- cursor beginning of current sentence
+) -- cursor beginning of next sentence
+:w -- save the file
+:q -- quit without save
+:wq -- save and quit
+:zz -- save and quit
+:q! -- discard changes and quit
+:w! -- save as a non-writeable file
+M - middle screen
+H - top screen
+L - button screen
+ctrl u - half screen up half page
+ctrl e - one line up
+ctrl y - one line down
+ctrl b - screen up fully
+ctrl f - screen down fully
+ctrl d - screen down by half page
+
+-------------------
+
+cal - calender print
+date - current date
+who - returns how many users loged in 
+whoami - return user id who loged in
+banner ashis - print large format
+
+dd - delete current line
+yy - copy the current line
+p - paste at cursor 
+yyp - it will first copy the current line and then paste on the next line
+ddp - if there are 3 line and our cursor is on 2nd line then if you want to use ddp here it will swap 2 line and 3 line.
+j -- join two line
+
+searching - 
+/ -- forward searching
+? - -backward search
+
+/hello
+?hello
+/hellow$
+/^hello
+
+pattern search -
+
+/\<search text\> - will move to the match exact word pattern text
+/the - find any pattern math the keyword search
+/ c[abc]t - will match c and t and inside [] can be anything
+:set hlsearch - search all 
+
+------------------
+
+tar - archieve file
+tar [options] [archive-file] [directory/file to be archive]
+tar cvf file.tar *.txt
+CVF is a flag
+
+pipes in unix:
+   command1|command2 -- command1 output works as input for command2
+   ls|more
+
+pipes used to filter data
+
+  grep - pattern and expression matching
+  grep[options] 'pattern to be matched' filename
+  grep 'hello text.txt'
+  grep 'hello' * - search in whole directory
+  grep -i 'hello' test.txt
+  grep -c 'hello' test.txt -- count
+  grep -l 'hello' * -- it retrun the files that matches the current pattern
+  grep -o  'hello' text.txt -- display only the matched string instead of whole line
+  grep -n  'hello' text.txt -- shows the line number of file with line matched
+  grep -v  'hello' text.txt -- displays lines that are not matched with specific search pattern
+  
+----------------------------
+sort-
+  sort -n grades.txt
+       -r grades.txt -- reverse
+   
+  sort -o text.txt > hello.txt
+  sort -nr -- sort numeric data in reverse order
+  sort -k 2 employee.txt -- sort 2nd column(if numeric column then add n after 2)
+  sort -u filename.txt -- remove duplicates
+ 
+
+----------------------------
+
+scp, ftp command -
+   scp[option] sourcefile destination
+
+: is distinguise local and remote location
+  scp test.txt remote_username@ipaddress:/remote/mydir  -- local to remote
+  scp test.txt local_username@ipaddress:/local/mydir  -- remote to local
+  scp test.txt remote_username@ipaddress:/remote_username@ipaddress/mydir  -- remote to remote
+
+  ftp
+
+home work - shell scripting
+
+
+  
